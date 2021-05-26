@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Character } from '@interfaces/character.interface';
 import { Episode } from '@interfaces/episode.interface';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '@environment/environment';
-import { pluck, take, tap, withLatestFrom } from 'rxjs/operators'
+import { catchError, pluck, take, tap, withLatestFrom } from 'rxjs/operators'
+import { ToastrService } from 'ngx-toastr';
 
 const ENDPOINT: string = `${environment.BASE_URL}/`;
 
@@ -17,7 +18,10 @@ export class DataService {
   private charactersSubject = new BehaviorSubject<Character[]>([]);
   characters$ = this.charactersSubject.asObservable();
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private toastr: ToastrService
+  ) {
     this.getEpisodes();
     this.getCharacters();
   }
@@ -30,7 +34,10 @@ export class DataService {
         take(1),
         pluck('results'),
         withLatestFrom(this.episodes$),
-        tap(([apiResponse, episodes]) => this.episodesSubject.next([...apiResponse, ...episodes]))
+        tap(([apiResponse, episodes]) => this.episodesSubject.next([...apiResponse, ...episodes])),
+        catchError(error => {
+          return this.showToastr(error, 'No more episodes to load');
+        })
       ).subscribe();
   }
 
@@ -42,9 +49,20 @@ export class DataService {
         take(1),
         pluck('results'),
         withLatestFrom(this.characters$),
-        tap(([apiResponse, characters]) => this.charactersSubject.next([...apiResponse, ...characters]))
+        tap(([apiResponse, characters]) => this.charactersSubject.next([...apiResponse, ...characters])),
+        catchError(error => {
+          return this.showToastr(error, 'No more characters to load');
+        })
       ).subscribe();
   }
 
-
+  showToastr(error: any, message: string): Observable<any> {
+    if (error.status === 404) {
+      this.toastr.info(message);
+      this.episodesSubject.unsubscribe()
+    } else {
+      this.toastr.error(error)
+    }
+    return of(error);
+  }
 }
