@@ -18,7 +18,6 @@ import { SearchModule } from './shared/components/search/search.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NotDataModule,
     SpinnerModule,
     HeaderModule,
     FooterModule,
