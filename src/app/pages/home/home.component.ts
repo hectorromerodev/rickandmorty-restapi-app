@@ -16,8 +16,8 @@ import { Component, OnInit } from '@angular/core';
   styles: [`
     .character__list{
       display: flex;
-      flex- wrap: wrap;
-      justify- content: center;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   `]
 })
