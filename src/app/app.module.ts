@@ -8,8 +8,8 @@ import { SpinnerModule } from '@components/spinner/spinner.module';
 import { HeaderModule } from '@components/header/header.module';
 import { FooterModule } from '@components/footer/footer.module';
 import { SearchModule } from '@components/search/search.module';
-import { ScrollUpModule } from './shared/components/scroll-up/scroll-up.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +18,8 @@ import { ScrollUpModule } from './shared/components/scroll-up/scroll-up.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
     SpinnerModule,
     HeaderModule,
     FooterModule,
