@@ -1,0 +1,21 @@
+.scroll{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3;
+  padding: .5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f118;
+  &:hover{
+    cursor:pointer;
+    transform: scale(1.2);
+    background-color: #f1f1f154;
+    transition: all .6s ease-in-out;
+  }
+}
