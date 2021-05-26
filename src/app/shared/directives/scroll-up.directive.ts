@@ -26,7 +26,6 @@ export class scrollUpDirective implements OnDestroy {
     const yOffset = window.pageYOffset;
     const scrollTop = this.document.documentElement.scrollTop;
     this.showBtn.emit((yOffset || scrollTop) > this.scrollHeight);
-    console.log((yOffset || scrollTop) > this.scrollHeight);
   }
 
   ngOnDestroy(): void {
