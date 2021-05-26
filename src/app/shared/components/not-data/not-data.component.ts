@@ -16,8 +16,8 @@ export class NotDataComponent implements OnInit {
   @Input() title: string = 'Not data found';
   @Input() message: string = 'Sorry, we can\'t find what you wanted to look for';
   @Input() img: Image = {
-    height: 400,
-    width: 600,
+    height: 300,
+    width: 500,
     src: 'assets/imgs/404.svg'
   };
   constructor() { }
