@@ -4,15 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NotDataModule } from './shared/components/not-data/not-data.module';
-import { SpinnerModule } from './shared/components/spinner/spinner.module';
-import { HeaderModule } from './shared/components/header/header.module';
-import { FooterModule } from './shared/components/footer/footer.module';
-import { SearchModule } from './shared/components/search/search.module';
+import { SpinnerModule } from '@components/spinner/spinner.module';
+import { HeaderModule } from '@components/header/header.module';
+import { FooterModule } from '@components/footer/footer.module';
+import { SearchModule } from '@components/search/search.module';
+import { ScrollUpModule } from './shared/components/scroll-up/scroll-up.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
