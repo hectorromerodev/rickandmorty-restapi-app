@@ -13,8 +13,8 @@ import { Image } from '@interfaces/image.interface';
   styleUrls: ['./not-data.component.scss']
 })
 export class NotDataComponent implements OnInit {
-  @Input() title: string = '404';
-  @Input() message: string = 'Oh no! You are lost.';
+  @Input() title: string = 'Not data found';
+  @Input() message: string = 'Sorry, we can\'t find what you wanted to look for';
   @Input() img: Image = {
     height: 400,
     width: 600,
