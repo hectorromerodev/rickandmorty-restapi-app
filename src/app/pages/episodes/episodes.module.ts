@@ -6,6 +6,7 @@ import { EpisodesComponent } from './episodes.component';
 import { NotDataModule } from '@app/shared/components/not-data/not-data.module';
 import { scrollUpDirective } from '@app/shared/directives/scroll-up.directive';
 import { ScrollUpModule } from '@app/shared/components/scroll-up/scroll-up.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ScrollUpModule } from '@app/shared/components/scroll-up/scroll-up.modul
     CommonModule,
     EpisodesRoutingModule,
     NotDataModule,
-    ScrollUpModule
+    ScrollUpModule,
+    InfiniteScrollModule
   ]
 })
 export class EpisodesModule { }
