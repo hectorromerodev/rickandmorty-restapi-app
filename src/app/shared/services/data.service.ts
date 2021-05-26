@@ -59,7 +59,6 @@ export class DataService {
   showToastr(error: any, message: string): Observable<any> {
     if (error.status === 404) {
       this.toastr.info(message);
-      this.episodesSubject.unsubscribe()
     } else {
       this.toastr.error(error)
     }
