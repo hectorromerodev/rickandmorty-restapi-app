@@ -1,6 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
-import { Episode } from '@shared/interfaces/episode.interface';
+import { Component } from '@angular/core';
+import { Episode } from '@interfaces/episode.interface';
 import { DataService } from '@services/data.service';
 import { Observable } from 'rxjs';
 
@@ -10,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class EpisodesComponent {
   episodes$: Observable<Episode[]> = this.dataServ.episodes$;
-
   showScroll: boolean = false;
   private pageNum = 1;
 
