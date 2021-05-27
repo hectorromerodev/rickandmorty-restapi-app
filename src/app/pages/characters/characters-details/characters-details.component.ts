@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   selector: 'app-characters-details',
   template: `
     <section class="character__details">
-      <app-characters-card *ngIf="character$ | async as character" [character]="character" ></app-characters-card>
+      <app-characters-card *ngIf="character$ | async as character" [character]="character" [showFavoritebtn]="false" ></app-characters-card>
     </section>
   `,
   styles: [`
@@ -32,7 +32,5 @@ export class CharactersDetailsComponent {
       take(1),
       tap(({ id }) => this.character$ = this.dataServ.getDetails(id))
     ).subscribe();
-
-
   }
 }

@@ -1,23 +1,25 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Character } from '@interfaces/character.interface';
 import { LocalStorageService } from '@services/local-storage.service';
 
 @Component({
   selector: 'app-characters-card',
   templateUrl: './characters-card.component.html',
-  styleUrls: ['./characters-card.component.scss'],
+  styles: [`
+    figure.card__favorite{
+      background: transparent;
+    }
+  `],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CharactersCardComponent {
   @Input() character!: Character;
-  constructor(
-    private localServ: LocalStorageService
-  ) { }
+  @Input() showFavoritebtn: boolean = true;
+  constructor(private localServ: LocalStorageService) { }
 
   getIcon(): string {
     return this.character.isFavorite ? 'heart-solid.svg' : 'heart.svg';
   }
-
 
   toggleFavorite(): void {
     const isFavorite = !!this.character.isFavorite;
