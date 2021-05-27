@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NotFoundRoutingModule } from './not-found-routing.module';
 import { NotFoundComponent } from './not-found.component';
+import { NotDataModule } from '@components/not-data/not-data.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { NotFoundComponent } from './not-found.component';
   ],
   imports: [
     CommonModule,
-    NotFoundRoutingModule
+    NotFoundRoutingModule,
+    NotDataModule
   ]
 })
 export class NotFoundModule { }
