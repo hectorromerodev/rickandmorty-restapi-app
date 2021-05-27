@@ -10,5 +10,10 @@ import { Component } from '@angular/core';
       </p>
     </footer>
   `,
+  styles: [`
+    a{
+      color: #f5f5f6
+    }
+  `]
 })
 export class FooterComponent { }
