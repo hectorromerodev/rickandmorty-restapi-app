@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Directive, EventEmitter, HostListener, Inject, Input, OnDestroy, Output } from '@angular/core';
+import { Directive, EventEmitter, Inject, OnDestroy, Output } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 
@@ -10,7 +10,7 @@ export class ScrollUpDirective implements OnDestroy {
   @Output() showBtn: EventEmitter<boolean> = new EventEmitter();
   private destroy = new Subject();
   private destroy$ = this.destroy.asObservable();
-  private scrollHeight = 600;
+  private scrollHeight = 500;
 
   constructor(
     @Inject(DOCUMENT) private document: Document
