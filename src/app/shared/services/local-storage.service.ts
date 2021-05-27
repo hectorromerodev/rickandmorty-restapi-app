@@ -18,7 +18,7 @@ export class LocalStorageService {
 
   private initStorage(): void {
     const currents = localStorage.getItem(MY_FAVORITES);
-    !currents ?? localStorage.setItem(MY_FAVORITES, JSON.stringify([]));
+    !currents && localStorage.setItem(MY_FAVORITES, JSON.stringify([]));
     this.getFavoritesChar();
   }
 
