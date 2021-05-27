@@ -151,10 +151,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "rickandmorty-restapi-app:build:production"
+              "browserTarget": "rickandmorty-restapi-app:build:production",
+              "serverTarget": "rickandmorty-restapi-app:server:production"
             },
             "development": {
-              "browserTarget": "rickandmorty-restapi-app:build:development"
+              "browserTarget": "rickandmorty-restapi-app:build:development",
+              "serverTarget": "rickandmorty-restapi-app:server:development"
             }
           },
           "defaultConfiguration": "production"
