@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Image } from '@interfaces/image.interface';
 
 @Component({
@@ -12,7 +12,7 @@ import { Image } from '@interfaces/image.interface';
   `,
   styleUrls: ['./not-data.component.scss']
 })
-export class NotDataComponent implements OnInit {
+export class NotDataComponent {
   @Input() title: string = 'Not data found';
   @Input() message: string = 'Sorry, we can\'t find what you wanted to look for';
   @Input() img: Image = {
@@ -20,9 +20,4 @@ export class NotDataComponent implements OnInit {
     width: 500,
     src: 'assets/imgs/404.svg'
   };
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
