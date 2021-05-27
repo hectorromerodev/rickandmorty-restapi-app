@@ -11,7 +11,6 @@ import { HeaderModule } from '@components/header/header.module';
 import { FooterModule } from '@components/footer/footer.module';
 import { SearchModule } from '@components/search/search.module';
 import { SpinnerInterceptor } from '@shared/interceptors/spinner.interceptor';
-import { ScrollUpDirective } from '@shared/directives/scroll-up/scroll-up.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,10 +19,10 @@ import { ScrollUpDirective } from '@shared/directives/scroll-up/scroll-up.direct
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
       preventDuplicates: true
-    }), // ToastrModule added
+    }),
     SpinnerModule,
     HeaderModule,
     FooterModule,
