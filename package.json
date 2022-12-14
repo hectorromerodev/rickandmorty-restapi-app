@@ -24,7 +24,7 @@
     "@angular/platform-server": "~12.0.1",
     "@angular/router": "~12.0.2",
     "@nguniversal/express-engine": "^12.0.0",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "ngx-infinite-scroll": "^10.0.1",
     "ngx-toastr": "^14.0.0",
     "rxjs": "~6.6.0",
